@@ -221,3 +221,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+data/pdfs/*
+data/extracted/*
+
+!data/pdfs/.gitkeep
+!data/extracted/.gitkeep

@@ -1,0 +1,38 @@
+[
+    {
+        "question": "What is machine learning?",
+        "expected_source": "machine_learning.pdf",
+        "retrieved_sources": [
+            "machine_learning.pdf",
+            "machine_learning.pdf",
+            "deep_learning.pdf"
+        ],
+        "hit": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+    },
+    {
+        "question": "What are neural networks?",
+        "expected_source": "deep_learning.pdf",
+        "retrieved_sources": [
+            "deep_learning.pdf",
+            "deep_learning.pdf",
+            "deep_learning.pdf"
+        ],
+        "hit": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+    },
+    {
+        "question": "What is self-attention?",
+        "expected_source": "transformers.pdf",
+        "retrieved_sources": [
+            "transformers.pdf",
+            "transformers.pdf",
+            "transformers.pdf"
+        ],
+        "hit": true,
+        "rank": 1,
+        "reciprocal_rank": 1.0
+    }
+]

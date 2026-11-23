@@ -1,0 +1,97 @@
+[
+    {
+        "question": "What is machine learning?",
+        "answer": "Machine Learning (ML) is a field of artificial intelligence that develops methods allowing computers to learn patterns from data. Instead of writing a separate rule for every situation, a developer provides examples and an algorithm estimates a model that can make predictions on new examples. A machine learning system typically includes data, a representation of that data, a learning algorithm, an objective or loss function, and an evaluation procedure.",
+        "expected_keywords": [
+            "artificial intelligence",
+            "patterns",
+            "data"
+        ],
+        "matched_keywords": [
+            "artificial intelligence",
+            "patterns",
+            "data"
+        ],
+        "keyword_coverage": 1.0,
+        "response_time_seconds": 1.4479433000087738,
+        "retrieved_sources": [
+            "machine_learning.pdf",
+            "machine_learning.pdf",
+            "deep_learning.pdf"
+        ],
+        "faithfulness": {
+            "faithfulness_score": 1.0,
+            "supported_claims": [
+                "Machine Learning (ML) is a field of artificial intelligence that develops methods allowing computers to learn patterns from data.",
+                "Instead of writing a separate rule for every situation, a developer provides examples and an algorithm estimates a model that can make predictions on new examples.",
+                "A machine learning system typically includes data, a representation of that data, a learning algorithm, an objective or loss function, and an evaluation procedure."
+            ],
+            "unsupported_claims": [],
+            "reasoning": "All three factual statements in the answer are directly quoted or paraphrased from Source 1 of the provided context. The context explicitly defines ML as a field of AI that learns patterns from data, describes the example‑driven approach versus rule‑based programming, and lists the typical components of a machine learning system. No claim in the answer extends beyond the supplied information."
+        }
+    },
+    {
+        "question": "What are neural networks?",
+        "answer": "Neural networks are computational models composed of artificial neurons that receive input values, multiply them by weights, add a bias, and apply an activation function (e.g., ReLU, sigmoid, tanh).  In a feed‑forward neural network, these neurons are organized into an input layer, one or more hidden layers, and an output layer, allowing information to be transformed progressively from raw inputs into useful representations for tasks such as regression, binary classification, or multi‑class classification.  Deep learning uses neural networks with multiple layers to learn hierarchical representations from data.",
+        "expected_keywords": [
+            "neurons",
+            "layers",
+            "learning"
+        ],
+        "matched_keywords": [
+            "neurons",
+            "layers",
+            "learning"
+        ],
+        "keyword_coverage": 1.0,
+        "response_time_seconds": 1.1813147999928333,
+        "retrieved_sources": [
+            "deep_learning.pdf",
+            "deep_learning.pdf",
+            "deep_learning.pdf"
+        ],
+        "faithfulness": {
+            "faithfulness_score": 1.0,
+            "supported_claims": [
+                "Neural networks are computational models composed of artificial neurons that receive input values, multiply them by weights, add a bias, and apply an activation function (e.g., ReLU, sigmoid, tanh).",
+                "In a feed‑forward neural network, neurons are organized into an input layer, one or more hidden layers, and an output layer.",
+                "Feed‑forward networks transform information progressively from raw inputs into useful representations for tasks such as regression, binary classification, or multi‑class classification.",
+                "Deep learning uses neural networks with multiple layers to learn hierarchical representations from data."
+            ],
+            "unsupported_claims": [],
+            "reasoning": "All factual statements in the answer are directly corroborated by the provided context: the description of an artificial neuron and its computation appears in Source 1 and Source 3; the structure of feed‑forward networks and their layer organization is in Source 1; the mapping of output types to tasks (regression, binary classification, softmax for multi‑class) is also in Source 1; and the definition of deep learning as using multi‑layer neural networks to learn representations is in Source 3. No claim lacks support."
+        }
+    },
+    {
+        "question": "What is self-attention?",
+        "answer": "Self‑attention is the mechanism that computes relationships between tokens in a sequence. For each token, the model creates a **query**, **key**, and **value** vector. Attention scores are obtained by comparing the queries with the keys, scaling the dot‑products (by √dₖ), applying a softmax, and then using those scores to weight and combine the value vectors:\n\n\\[\n\\text{Attention}(Q, K, V)=\\text{softmax}\\!\\left(\\frac{QK^{\\top}}{\\sqrt{d_k}}\\right)V\n\\]\n\nThis process lets each token attend to (i.e., incorporate information from) every other token, capturing their inter‑dependencies.",
+        "expected_keywords": [
+            "attention",
+            "tokens",
+            "relationships"
+        ],
+        "matched_keywords": [
+            "attention",
+            "tokens",
+            "relationships"
+        ],
+        "keyword_coverage": 1.0,
+        "response_time_seconds": 1.1174021000042558,
+        "retrieved_sources": [
+            "transformers.pdf",
+            "transformers.pdf",
+            "transformers.pdf"
+        ],
+        "faithfulness": {
+            "faithfulness_score": 1.0,
+            "supported_claims": [
+                "Self‑attention is the mechanism that computes relationships between tokens in a sequence.",
+                "For each token, the model creates a query, key, and value vector.",
+                "Attention scores are obtained by comparing the queries with the keys, scaling the dot‑products by √dₖ, applying a softmax, and then using those scores to weight and combine the value vectors.",
+                "This process lets each token attend to every other token, capturing their inter‑dependencies."
+            ],
+            "unsupported_claims": [],
+            "reasoning": "All factual statements in the answer are directly corroborated by the retrieved context (Source 1). The context describes self‑attention as computing relationships between tokens, projecting inputs into query/key/value vectors, computing scaled dot‑product attention with softmax, and combining value vectors, which matches each claim made in the answer. No claim lacks support, so the answer is fully faithful."
+        }
+    }
+]

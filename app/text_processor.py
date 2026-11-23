@@ -8,11 +8,11 @@ BASE_DIR = os.path.dirname(
 )
 INPUT_PATH = os.path.join(
     BASE_DIR,
-    "Data",
+    "data",
     "extracted",
     "extracted_pages.csv"
 )
-OUTPUT_DIR = os.path.join(BASE_DIR,"Data","extracted")
+OUTPUT_DIR = os.path.join(BASE_DIR,"data","extracted")
 
 def clean_text(text):
     """
@@ -31,57 +31,97 @@ def clean_text(text):
     return text
 
 
-def create_chunk(text,chunk_size=1000,chunk_overlap = 150):
-    """
-    Split the input text into chunks of specified size with optional overlap.
-    
-    Args:
-        text (str): the input text to be chunked.
-        chunk_size (int):the size of each chunk.Default is 1000 characters.
-        overlap (int): the number of overlapping characters between consecutive chunks. Default is 150 characters.
-    """
+
+def create_chunk(text, chunk_size=1000, chunk_overlap=150):
+
+    if chunk_size <= 0:
+        raise ValueError("chunk_size must be positive")
+
+    if chunk_overlap < 0 or chunk_overlap >= chunk_size:
+        raise ValueError(
+            "chunk_overlap must be non-negative "
+            "and smaller than chunk_size"
+        )
+
     chunks = []
+
     start = 0
-    while start <len(text):
+
+    while start < len(text):
+
         end = start + chunk_size
+
         chunk = text[start:end]
+
         if chunk.strip():
             chunks.append(chunk)
+
         start += chunk_size - chunk_overlap
+
     return chunks
 
 
 def process_documents(df):
-    """
-    process the input DataFrame by cleaning the text and creating chunks for each document.
-    
-    Args:
-        df (pd.DataFrame): the input DataFrame containing the documents to be processed. the DataFrame should have a column named 'text' containing the documnents to be processed.
 
-    """
+    required_columns = [
+        "document_name",
+        "page_number",
+        "text"
+    ]
+
+    for column in required_columns:
+
+        if column not in df.columns:
+            raise ValueError(
+                f"Missing required column: {column}"
+            )
+
     all_chunks = []
-    for _,row in df.iterrows():
-        original_text = row['text']
-        cleaned_text = clean_text(original_text)
-        # generate chunks for the cleaned text
-        page_chunks = create_chunk(cleaned_text,chunk_size = 1000,chunk_overlap = 150)
 
-        for chunk_number, chunk in enumerate(page_chunks,start=1):
+    for _, row in df.iterrows():
+
+        original_text = row["text"]
+
+        cleaned_text = clean_text(original_text)
+
+        if not cleaned_text:
+            continue
+
+        page_chunks = create_chunk(
+            cleaned_text,
+            chunk_size=1000,
+            chunk_overlap=150
+        )
+
+        for chunk_number, chunk in enumerate(
+            page_chunks,
+            start=1
+        ):
+
             chunk_data = {
+
                 "document_name": row["document_name"],
+
                 "page_number": row["page_number"],
+
                 "chunk_number": chunk_number,
+
                 "chunk_id": (
                     f"{row['document_name']}_"
                     f"page_{row['page_number']}_"
                     f"chunk_{chunk_number}"
                 ),
+
                 "text": chunk,
+
                 "character_count": len(chunk)
+
             }
 
             all_chunks.append(chunk_data)
+
     return all_chunks
+
 
 
 

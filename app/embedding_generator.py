@@ -3,8 +3,8 @@ import numpy as np
 import pandas as pd
 from sentence_transformers import SentenceTransformer
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-INPUT_PATH = os.path.join(BASE_DIR, 'Data','extracted' ,'chunks.csv')
-OUTPUT_DIR = os.path.join(BASE_DIR, 'Data', 'embeddings')
+INPUT_PATH = os.path.join(BASE_DIR, 'data','extracted' ,'chunks.csv')
+OUTPUT_DIR = os.path.join(BASE_DIR, 'data', 'embeddings')
 
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 

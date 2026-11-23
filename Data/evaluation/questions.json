@@ -1,0 +1,30 @@
+
+[
+    {
+        "question": "What is machine learning?",
+        "expected_keywords": [
+            "artificial intelligence",
+            "patterns",
+            "data"
+        ],
+        "expected_source": "machine_learning.pdf"
+    },
+    {
+        "question": "What are neural networks?",
+        "expected_keywords": [
+            "neurons",
+            "layers",
+            "learning"
+        ],
+        "expected_source": "deep_learning.pdf"
+    },
+    {
+        "question": "What is self-attention?",
+        "expected_keywords": [
+            "attention",
+            "tokens",
+            "relationships"
+        ],
+        "expected_source": "transformers.pdf"
+    }
+]

@@ -2,6 +2,9 @@
 
 An AI-powered Research Assistant that allows users to upload PDF documents and ask questions about their content. It uses Retrieval-Augmented Generation (RAG), semantic search, FAISS, Sentence Transformers and Groq LLM inference to generate context-grounded answers with source references.
 
+Try the application here:
+https://rag-research-assistant-x5sfcdd3xqppevdjztxpub.streamlit.app/
+
 ## 🚀 Features
 
 - PDF text extraction using PyMuPDF
@@ -184,12 +187,21 @@ Never commit your `.env` file.
 streamlit run streamlit_app.py
 ```
 
-## 📊 Evaluation
 
-### Retrieval Evaluation
+## 📊 Evaluation Results
 
-- Recall@3
-- Mean Reciprocal Rank (MRR)
+Initial evaluation using 3 sample questions:
+
+| Metric | Result |
+|---|---:|
+| Recall@3 | 1.00 |
+| MRR | 1.00 |
+| Keyword Coverage | 1.00 |
+| Faithfulness | 1.00 |
+| Average Response Time | 1.25 seconds |
+
+Note: These are preliminary results from a small evaluation
+dataset and should not be interpreted as general performance.
 
 ### Answer Evaluation
 
